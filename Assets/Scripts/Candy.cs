@@ -65,8 +65,7 @@ public class Candy : MonoBehaviour
                     previousSelected.DeselectCandy();
                     FindAllMatches();
 
-                    //StopCoroutine(BoardManager.sharedInstace.FindNullCandies());
-                    //StartCoroutine(BoardManager.sharedInstace.FindNullCandies());
+                    GUIManager.sharedInstance.MoveCounter--;
                 }
                 else
                 {
@@ -152,10 +151,6 @@ public class Candy : MonoBehaviour
             {
                 candy.GetComponent<SpriteRenderer>().sprite = null;
             }
-
-            //StopCoroutine(BoardManager.sharedInstace.FindNullCandies());
-            //StartCoroutine(BoardManager.sharedInstace.FindNullCandies());
-
             return true;
         }
         else
