@@ -64,6 +64,9 @@ public class Candy : MonoBehaviour
                     previousSelected.FindAllMatches();
                     previousSelected.DeselectCandy();
                     FindAllMatches();
+
+                    //StopCoroutine(BoardManager.sharedInstace.FindNullCandies());
+                    //StartCoroutine(BoardManager.sharedInstace.FindNullCandies());
                 }
                 else
                 {
@@ -150,6 +153,9 @@ public class Candy : MonoBehaviour
                 candy.GetComponent<SpriteRenderer>().sprite = null;
             }
 
+            //StopCoroutine(BoardManager.sharedInstace.FindNullCandies());
+            //StartCoroutine(BoardManager.sharedInstace.FindNullCandies());
+
             return true;
         }
         else
@@ -180,6 +186,8 @@ public class Candy : MonoBehaviour
         if(hMatch || vMatch)
         {
             spriteRenderer.sprite = null;
+            StopCoroutine(BoardManager.sharedInstace.FindNullCandies());
+            StartCoroutine(BoardManager.sharedInstace.FindNullCandies());
         }
     }
 }
